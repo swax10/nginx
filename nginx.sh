@@ -7,5 +7,7 @@ do
     esac
 done
 
-docker pull nginx:latest
+docker pull nginx:stable
 docker run -it --rm -d -p 80:80 --name "$cname" nginx
+echo /usr/share/nginx/html
+docker exec -it "$cname" /bin/bash
